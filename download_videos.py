@@ -53,7 +53,7 @@ def download_video(url, output_dir):
 
 def process_videos(dataset, output_dir):
     for index, exercise in enumerate(set(item.get('exercise') for item in dataset)):
-        matching_exercises = [item for item in dataset if item.get('exercise') == exercise and item.get('male_front_exercise_video_path') is None]
+        matching_exercises = [item for item in dataset if item.get('exercise') == exercise]
 
         if not matching_exercises:
             logging.warning(f"Nenhum exercício correspondente encontrado para {exercise}.")
